@@ -61,7 +61,7 @@ Pull performance data → Identify winning patterns → Generate new variations 
 ```
 
 ### Mode 3: Scaled Static Batches (Grounded)
-For recurring static ad production at volume (e.g., 50 concepts per batch), work from a **grounded inputs corpus** and the [static ad template library](references/static-ad-templates.md). Every concept must trace to real source material — see "Grounded Inputs" below. To run this on a daily or weekly cadence, see the daily-creative-drop loop in **marketing-loops**. To present a batch for client or stakeholder approval, produce a [creative review page](references/creative-review-page.md).
+For recurring static ad production at volume (e.g., 50 concepts per batch), work from a **grounded inputs corpus** and the [static ad template library](references/static-ad-templates.md). Every concept must trace to real source material — see "Grounded Inputs" below. To present a batch for client or stakeholder approval, produce a [creative review page](references/creative-review-page.md).
 
 ### Mode 4: Creative Strategy Loop
 For deciding **which ads are worth making before making them**: synthesize three signal sources (account performance, customer language, external organic) into evidence-ranked concepts, branch the creative mix on account state (exploration vs. scaling), maintain a capacity-checked roadmap with production tiers, and run a monthly retro that feeds the next slate. The full system lives in [references/creative-roadmap.md](references/creative-roadmap.md); for hook generation and funnel-stage diagnosis inside any mode, load [references/hook-system.md](references/hook-system.md).
@@ -151,7 +151,7 @@ For detailed specs and format variations, see [references/platform-specs.md](ref
 
 ## Generating Ad Visuals
 
-**To decide *which format to make next*** (before briefing any specific ad), consult the Meta creative format taxonomy in [references/meta-creative-formats.md](references/meta-creative-formats.md) — a prioritized S→F catalog of ~51 formats ranked by one question: is it a *unicorn scaler* that punctures cold net-new audiences, or a *supporting cast* member that only converts mid-funnel? Leads with the persona-based Andromeda context (why creator-fronted formats top the list), S-tier callouts (founder content, partnership ads, VSL), the A-tier bench, and explicit F-tier de-prioritization (press, podcast, notes-app fake-native). Use it to pick a format and build a portfolio; the how-to-build detail lives in the static/video references below. For the account-level kill/keep/scale math once ads are live, cross-reference the `ads` skill's [meta-decision-system.md](../../ads/references/meta-decision-system.md).
+**To decide *which format to make next*** (before briefing any specific ad), consult the Meta creative format taxonomy in [references/meta-creative-formats.md](references/meta-creative-formats.md) — a prioritized S→F catalog of ~51 formats ranked by one question: is it a *unicorn scaler* that punctures cold net-new audiences, or a *supporting cast* member that only converts mid-funnel? Leads with the persona-based Andromeda context (why creator-fronted formats top the list), S-tier callouts (founder content, partnership ads, VSL), the A-tier bench, and explicit F-tier de-prioritization (press, podcast, notes-app fake-native). Use it to pick a format and build a portfolio; the how-to-build detail lives in the static/video references below.
 
 **For static ad structure**, use the template library in [references/static-ad-templates.md](references/static-ad-templates.md) — layout frameworks (Us vs. Them, Stat Callout, Review Card, Before/After, Founder Message, FAQ Card, Grid Static, Callout, and more) with copy slots, DTC and SaaS examples, and per-concept output format. Each template carries a **tier (S–F)** and **funnel role** (unicorn cold-scaler vs. mid-funnel supporting cast) so you reach for the right one first. Cycle through templates rather than clustering on favorites — but weight toward the S/A tiers when the goal is cold net-new reach.
 
@@ -389,37 +389,6 @@ For large-scale creative production (Anthropic's growth team generates 100+ vari
 
 ---
 
-## Tool Integrations
+## Alcance de esta copia local
 
-For pulling performance data and managing campaigns, see the [tools registry](../../tools/REGISTRY.md).
-
-| Platform | Pull Performance Data | Manage Campaigns | Guide |
-|----------|:---------------------:|:----------------:|-------|
-| **Google Ads** | `google-ads campaigns list`, `google-ads reports get` | `google-ads campaigns create` | [google-ads.md](../../tools/integrations/google-ads.md) |
-| **Meta Ads** | `meta-ads insights get` | `meta-ads campaigns list` | [meta-ads.md](../../tools/integrations/meta-ads.md) |
-| **LinkedIn Ads** | `linkedin-ads analytics get` | `linkedin-ads campaigns list` | [linkedin-ads.md](../../tools/integrations/linkedin-ads.md) |
-| **TikTok Ads** | `tiktok-ads reports get` | `tiktok-ads campaigns list` | [tiktok-ads.md](../../tools/integrations/tiktok-ads.md) |
-
-### Workflow: Pull Data, Analyze, Generate
-
-```bash
-# 1. Pull recent ad performance
-node tools/clis/google-ads.js reports get --type ad_performance --date-range last_30_days
-
-# 2. Analyze output (identify top/bottom performers)
-# 3. Feed winning patterns into this skill
-# 4. Generate new variations
-# 5. Upload to platform
-```
-
----
-
-## Related Skills
-
-- **ads**: For campaign strategy, targeting, budgets, and optimization
-- **marketing-loops**: For running static batch generation on a recurring cadence (the daily-creative-drop loop)
-- **customer-research**: For mining reviews and comments when building the grounded inputs corpus
-- **copywriting**: For landing page copy (where ad traffic lands)
-- **ab-testing**: For structuring creative tests with statistical rigor
-- **marketing-psychology**: For psychological principles behind high-performing creative
-- **copy-editing**: For polishing ad copy before launch
+Las integraciones de cuentas publicitarias y las habilidades complementarias del repositorio original no forman parte de esta instalación. Analiza únicamente los datos que el usuario o el orquestador entreguen de forma autorizada; si faltan, solicita el insumo. Entrega conceptos, variantes y briefs para revisión. No crees campañas, subas anuncios, publiques ni autorices gasto desde esta habilidad.
