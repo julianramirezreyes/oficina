@@ -20,4 +20,10 @@ Desactiva la telemetría y la consulta automática de habilidades en cada proces
 5. Exporta con el ejecutable local, por ejemplo `HYPERFRAMES_NO_TELEMETRY=1 HYPERFRAMES_SKIP_SKILLS=1 hyperframes render --quality looks --output salida.mp4`.
 6. Comprueba con `ffprobe` duración, dimensiones, códec y pista de audio; reproduce el MP4, escucha al menos el inicio, cortes y final, y revisa fotogramas de cada tramo. Reporta lo no verificado.
 
-Al crear una composición sin red, usa recursos JavaScript locales; no cargues GSAP desde CDN. La transcripción, si se necesita, debe funcionar con español: inspecciona `transcribe --help`, elige un modelo multilingüe y especifica idioma `es` solo si esa versión acepta la opción. Nunca uses un modelo `.en` ni presupongas exactitud sin escuchar muestras. No envíes audio a servicios remotos sin autorización.
+Al crear una composición sin red, usa recursos JavaScript locales; no cargues GSAP desde CDN.
+
+## Transcripción local en español
+
+1. Comprueba la disponibilidad de Parakeet local. Ejecuta `HYPERFRAMES_NO_TELEMETRY=1 HYPERFRAMES_SKIP_SKILLS=1 hyperframes transcribe audio.wav --engine parakeet --language es --json`.
+2. Exige `engine: parakeet` en el resultado. El motor explícito evita volver silenciosamente al predeterminado de Whisper `small.en`. Si Parakeet falta o falla, informa el bloqueo; no instales modelos ni cambies de motor por tu cuenta. `doctor --json` puede seguir mostrando Whisper como complemento ausente aunque Parakeet funcione.
+3. Revisa las palabras y marcas de tiempo escuchando el original. Corrige nombres propios, cifras y términos del negocio antes de crear subtítulos. No envíes audio a servicios remotos sin autorización.
