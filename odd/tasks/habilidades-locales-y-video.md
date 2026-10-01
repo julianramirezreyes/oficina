@@ -6,7 +6,7 @@ Dotar a los especialistas de habilidades concretas, sin añadir agentes ni aplic
 
 ## Problema y motivo
 
-La oficina tiene 14 `AGENTS.md` con roles claros, pero ninguna habilidad local. Los editores aún no disponen de FFmpeg. Las instrucciones por sí solas no permiten transcribir, cortar ni exportar video.
+Al iniciar este trabajo, la oficina tenía 14 `AGENTS.md` con roles claros, pero ninguna habilidad local. Los editores aún no disponen de FFmpeg ni de un binario HyperFrames comprobado. Las instrucciones por sí solas no permiten transcribir, cortar ni exportar video.
 
 ## Alcance autorizado
 
@@ -28,8 +28,8 @@ La oficina tiene 14 `AGENTS.md` con roles claros, pero ninguna habilidad local. 
 ## Tareas
 
 - [x] **T1 — Incorporar habilidades de copy.** Ruta delegada; disparadores: preparación y escritura de varios archivos. `social` quedó solo en `copy-organico` y `ad-creative` solo en `copy-ads`; ambos roles tienen límites explícitos. Commit de implementación: `87a4a6a365670337cd751f282318b5178094776e`.
-- [ ] **T2 — Preparar editores y habilidades de video.** Ruta delegada; disparadores: lectura amplia, adaptación de varias habilidades y archivos. Incorporar únicamente el flujo HyperFrames necesario para edición real y exportación, fijar fuentes y desactivar actualización implícita; instrucciones de uso en español y verificación estructural. Commit: pendiente.
-- [ ] **T3 — Preparar FFmpeg y ejecutar prueba técnica.** Ruta delegada; disparadores: instalación y ejecución de herramientas externas. Instalar en espacio de usuario si es viable; verificar `ffmpeg`, `ffprobe`, H.264 y render corto sobre material sintético. Registrar resultados y límites. Commit: pendiente si hay archivos de proyecto; la instalación local externa se documentará sin versionar binarios.
+- [x] **T2 — Preparar editores y habilidades de video.** Ruta delegada; disparadores: lectura amplia, adaptación de varias habilidades y archivos. Cada editor recibió `general-video`, `hyperframes-core` y `hyperframes-cli` locales, adaptadas para cortes reales y exportación sin actualización implícita. Commit de implementación: `87a927623e5b3ccd16870829de29dd2b45f6a62d`.
+- [ ] **T3 — Preparar FFmpeg, CLI HyperFrames y ejecutar prueba técnica.** Ruta delegada; disparadores: instalación y ejecución de herramientas externas. Instalar FFmpeg/FFprobe en espacio de usuario si es viable y fijar una versión revisada de `@hyperframes/cli` con ejecutable local, sin `npx` remoto. Verificar requisitos, H.264 y render corto sobre material sintético. Registrar resultados y límites. Commit: pendiente si hay archivos de proyecto; la instalación local externa se documentará sin versionar binarios.
 
 ## Verificación
 
@@ -40,9 +40,12 @@ La oficina tiene 14 `AGENTS.md` con roles claros, pero ninguna habilidad local. 
 
 ## Progreso
 
-- Estado: T1 completada; T2 y T3 pendientes.
+- Estado: T1 y T2 completadas; T3 pendiente. Las habilidades de video todavía no prueban que el render funcione.
 - Rama local: `feat/agent-skills-video`; línea base: `2f8778c`.
 - Fuente T1: `coreyhaines31/marketingskills`, revisión fija `5b2c0007766c6a1cf1d53fd8fc73e979e0821022`, licencia MIT conservada en cada habilidad. Los archivos de terceros siguen en inglés; las instrucciones propias son españolas. No se incluyen los archivos de evaluación, que no son necesarios para ejecutar las habilidades.
 - Verificación T1: comprobación RED previa falló por ausencia de `social/SKILL.md`; después, `quick_validate.py` aprobó ambas habilidades, la prueba estructural confirmó rutas, frontmatter, licencia, ausencia de archivos con permiso de ejecución y límites de autoridad, y `git diff --cached --check` terminó sin errores. No se ejecutó ningún script de terceros; la plantilla HTML de `ad-creative` contiene JavaScript que no se abrió ni probó. Prueba funcional de descubrimiento por Codex pendiente. Los enlaces de `ad-creative` a herramientas externas y a otra habilidad de su repositorio original no se instalaron y no deben seguirse automáticamente.
 - Reversión T1: retirar únicamente las carpetas de habilidades de los dos agentes y los párrafos añadidos a sus `AGENTS.md`; no afecta a otros roles.
-- Próximo paso: T2.
+- Fuente T2: `heygen-com/hyperframes`, revisión fija `8593b01a6d0df887aa111a1d0871c42c5343fab1`, licencia Apache-2.0 conservada en cada habilidad. Se conservaron solo referencias técnicas para cortes y composición; se retiraron scripts, subagentes y referencias de servicios remotos. Los `SKILL.md` adaptados y los límites de cada editor están en español. `talking-head-recut` no se instaló porque reproduce el metraje completo con superposiciones y su ejemplo de transcripción usa `small.en`.
+- Verificación T2: comprobación RED previa falló por ausencia de `general-video/SKILL.md`; después, `quick_validate.py` aprobó las seis habilidades, la prueba estructural confirmó rutas, frontmatter, licencias, enlaces locales y ausencia de archivos ejecutables; las referencias conservadas coincidieron con la revisión fijada tras normalizar el reemplazo de `npx` por el ejecutable local. `git diff --cached --check` terminó sin errores. No se ejecutó el CLI ni se renderizó video: faltan binario y FFmpeg; el rendimiento y la calidad editorial siguen sin verificar.
+- Reversión T2: retirar únicamente las tres carpetas de habilidades de cada editor y los párrafos añadidos a sus `AGENTS.md`; no afecta a los agentes de copy.
+- Próximo paso: T3.
