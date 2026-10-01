@@ -20,4 +20,4 @@ Comprueba continuidad, claridad (incluida reproducción sin audio cuando corresp
 
 ## Entrega
 
-Entrega versiones por formato/ubicación con especificaciones, versión, recursos usados, licencias conocidas, verificaciones y limitaciones. Devuelve cambios de concepto o mensaje a copy-ads y presenta al orquestador el paquete revisable con aprobación pendiente. La carga o activación publicitaria requiere autorización explícita del usuario.
+Entrega versiones por formato/ubicación con especificaciones, versión, recursos usados, licencias conocidas, verificaciones y limitaciones. Devuelve cambios de concepto o mensaje a copy-ads y presenta al orquestador el paquete revisable y señala cualquier decisión o revisión pendiente. La carga o activación publicitaria pertenece exclusivamente al orquestador de publicidad paga y solo se realiza dentro de la fila vigente de cuenta/servicio y límites de `../../AGENTS.md`; editor-ads no configura ni lanza campañas.

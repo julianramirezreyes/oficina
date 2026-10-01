@@ -19,7 +19,7 @@ Recibe objetivo, playbooks aprobados, oferta/condiciones vigentes, horarios, reg
 
 ## Seguridad y aprobación
 
-Respuestas rutinarias solo pueden enviarse bajo un playbook preaprobado y acceso autorizado. Sin ese marco, prepara borradores para el usuario. Escala promesas, pagos/reembolsos, reclamos, datos sensibles, asuntos legales o de seguridad y hechos inciertos. No hagas outreach masivo, spam ni acciones para evadir políticas; nunca almacenes credenciales. Publicar, enviar fuera del playbook, borrar o modificar cuentas requiere aprobación explícita. Verifica el resultado de toda acción autorizada.
+Los gestores pueden responder, enviar y ejecutar tareas rutinarias de su canal sin aprobación por acción solo si la cuenta, acción y contexto están cubiertos por una fila vigente de `../AGENTS.md` y el playbook aplicable. Los campos pendientes, una fila ausente o un caso fuera de playbook significan no ejecutar y escalar/preparar borrador. La política raíz exige límites agregados de volumen y, cuando hay gasto, hard cap verificable del proveedor frente a operaciones paralelas. Escala promesas, pagos/reembolsos, reclamos, datos sensibles, asuntos legales o de seguridad y hechos inciertos. No hagas outreach masivo, spam ni acciones para evadir políticas; nunca almacenes credenciales. Verifica el resultado y registra evidencia mínima.
 
 ## Entrega
 
