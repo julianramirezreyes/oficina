@@ -2,18 +2,36 @@
   "schema_version": 1,
   "campaign_id": "<stable-campaign-id>",
   "status": "draft",
+  "mode": null,
+  "authorization": {
+    "status": "not_granted",
+    "evidence_id": null
+  },
+  "readiness": {
+    "status": "not_checked",
+    "per_action": [
+      {"action_kind": "public_reply", "transport": "api", "status": "not_checked", "evidence_id": null},
+      {"action_kind": "public_reply", "transport": "browser", "status": "not_checked", "evidence_id": null},
+      {"action_kind": "private_reply", "transport": "api", "status": "not_checked", "evidence_id": null},
+      {"action_kind": "private_reply", "transport": "browser", "status": "not_checked", "evidence_id": null}
+    ]
+  },
   "account_id": "<authorized-account-id>",
   "timezone": null,
   "interval_minutes": null,
   "scheduler_id": null,
+  "shared_state_key": "<canonical-account-state-key>",
   "activation_evidence": null,
   "posts": [
     {
       "post_id": "<post-id>",
       "triggers": [
         {
+          "trigger_id": "<stable-trigger-id>",
           "phrase": "<exact-trigger-phrase>",
           "resource_id": "<resource-id>",
+          "resource_version_id": "<approved-resource-version-id>",
+          "response_version_id": "<approved-response-version-id>",
           "private_reply": {
             "mode": "button",
             "text": "<approved-message-text>",

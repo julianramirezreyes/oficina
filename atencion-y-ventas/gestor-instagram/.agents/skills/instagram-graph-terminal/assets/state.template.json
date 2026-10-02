@@ -1,39 +1,68 @@
 {
   "schema_version": 1,
-  "campaign_id": "<stable-campaign-id>",
   "account_id": "<authorized-account-id>",
+  "canonical_state_path": "<private-account-state-path>",
   "run_id": "<unique-run-id>",
+  "mode": "<one_off-or-periodic-or-continuous_drain>",
+  "status": "not_started",
   "lock": {
-    "directory": "<private-lock-directory>",
+    "directory": "<canonical-account-lock-directory>",
     "owner": "<run-id>",
     "acquired_at": "<timestamp>",
     "stale_lock_resolution": "human_required"
   },
-  "scan": {
-    "status": "not_started",
-    "next_cursor": null,
-    "backlog_interaction_ids": [],
-    "updated_at": null
+  "post_scans": [
+    {
+      "post_id": "<post-id>",
+      "campaign_ids": ["<campaign-id>"],
+      "status": "not_started",
+      "next_cursor": null,
+      "pages_observed": 0,
+      "items_observed": 0,
+      "metadata_item_count": null,
+      "backlog_interaction_ids": [],
+      "coverage_watermark": null,
+      "last_complete_audit_at": null,
+      "updated_at": null
+    }
+  ],
+  "attempt_record_template": {
+    "attempt_id": "<unique-attempt-id>",
+    "transport": "<api-or-browser>",
+    "status": "intent_recorded",
+    "intent_evidence_id": "<durable-intent-evidence-id>",
+    "platform_result_id": null,
+    "result_evidence_id": null,
+    "observed_at": "<timestamp>"
   },
   "interactions": [
     {
+      "post_id": "<post-id>",
       "source_interaction_id": "<stable-comment-or-event-id>",
+      "candidate_campaign_ids": [],
       "matched_trigger_ids": [],
       "resolution": "pending",
       "actions": {
         "public_reply": {
           "status": "pending",
-          "intent_id": null,
-          "intent_recorded_at": null,
-          "api_accepted_at": null,
-          "confirmed_at": null
+          "action_identity": {
+            "account_id": "<account-id>",
+            "source_interaction_id": "<source-interaction-id>",
+            "action_kind": "public_reply"
+          },
+          "response_version_id": "<approved-public-response-version-id>",
+          "attempts": []
         },
         "private_reply": {
           "status": "pending",
-          "intent_id": null,
-          "intent_recorded_at": null,
-          "api_accepted_at": null,
-          "confirmed_at": null
+          "action_identity": {
+            "account_id": "<account-id>",
+            "source_interaction_id": "<source-interaction-id>",
+            "action_kind": "private_reply"
+          },
+          "response_version_id": "<approved-private-response-version-id>",
+          "resource_version_id": "<approved-resource-version-id>",
+          "attempts": []
         }
       }
     }
