@@ -39,7 +39,7 @@ Strict TDD: enabled by project instructions. This unit changes instructions/conf
 
 ## Delivery
 Existing feature branch: `policy/instagram-response-automation`. Start boundary: `b31f51c`.
-T1 authored 201 lines; T2 correction adds 170 lines including tracker evidence (371 total from the start boundary, below the 400-line review budget). Strategy: ask-on-risk. No push or PR.
+T1 authored 201 lines; T2 correction adds 170 lines (371 total from the start boundary, below the 400-line review budget). T2 commit: `02f21a069fbc81d99a9cc8b449403e8a564ce587`. Strategy: ask-on-risk. No push or PR.
 Rollback: revert this unit's skill/routing/template/procedure edits, preserving any future local operational data.
 
 ## Evidence and progress
@@ -50,4 +50,5 @@ Rollback: revert this unit's skill/routing/template/procedure edits, preserving 
 - Live read-only evidence for T3 (not a completion): authorized account identity checks matched, but known post metadata indicated comments while the documented comment scan returned no rows across all cursor pages without an API error. The app dashboard reports unpublished status, and the cause of the empty scan is not established. Preserve pending state/watermark and stop sends dependent on the inconsistent scan. API readiness is blocked where app publication is required; any routine browser action needs a separate capability/authorization/readiness check. No sends or app/access changes were made; first-reply buttons remain unverified.
 - Independent read-test finding for T2: current state had one cursor/backlog for all posts, interaction records omitted post ID, campaign triggers lacked stable IDs, cross-campaign dedupe was undefined, and null-interval wording risked draft execution. Corrections remain instructional/templates only; no executable runtime is authorized.
 - T2 scenario readback: timeout -> unknown/reconcile/no blind retry; second writer -> shared account lock stops it, with no stale-lock takeover; same interaction across campaigns/transports -> one global public/private action key, conflicting mappings -> ambiguous/no send; uncertain transport handoff -> read/reconcile under same key and API permission/limit failures stay stopped; draft/null mode -> no work until explicit mode, authorization, and per-action readiness; arrivals during post scans -> fair per-post overlap/backlog handling and a final-arrivals pass, with no “drained” claim when rows remain or scan completeness is uncertain.
+- T2 structural verification: skill quick validator, both JSON parses, local reference existence, and `git diff --check` passed on the committed source candidate. One initial JSON command had a mistyped state-template path; the corrected exact command passed. No live API/browser/schedule/app operation was run for this correction.
 - Next: T4 independent final instruction exercise. T3 remains pending/blocked as above; do not activate a campaign from preparation artifacts.
