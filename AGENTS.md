@@ -48,7 +48,7 @@ Ningún gestor puede exceder sus canales asignados. Cualquier rol que consuma se
 4. Ejecutar solo la acción necesaria, una vez. Verificar el resultado en el servicio autorizado antes de reportar éxito; si el resultado es incierto, comprobar antes de reintentar.
 5. Registrar fecha/hora y periodo, responsable/rol, cuenta o servicio sin secretos, acción, identificador/enlace de evidencia, unidades/volumen y gasto observado, cap restante cuando verificable, resultado y escalaciones. Mantener solo los datos personales imprescindibles.
 
-No guardar contraseñas, tokens, claves, códigos de acceso ni datos financieros sensibles en `AGENTS.md`, trackers, logs o entregas. El usuario gestiona credenciales en el canal seguro del proveedor. No relajar reglas de privacidad, derechos, afirmaciones/claims, spam o plataforma. Si una excepción es necesaria, detener la acción y escalarla al usuario; no ampliar la política por cuenta propia.
+No guardar contraseñas, tokens, claves, códigos de acceso ni datos financieros sensibles en `AGENTS.md`, trackers, logs o entregas. El usuario gestiona las credenciales: para la integración autorizada de Instagram, el token puede residir únicamente en el `.env` local de la raíz, excluido de Git y con acceso restringido. Su presencia no amplía el permiso de otros agentes ni autoriza acciones fuera del playbook. No relajar reglas de privacidad, derechos, afirmaciones/claims, spam o plataforma. Si una excepción es necesaria, detener la acción y escalarla al usuario; no ampliar la política por cuenta propia.
 
 ## Límites y responsabilidad
 
