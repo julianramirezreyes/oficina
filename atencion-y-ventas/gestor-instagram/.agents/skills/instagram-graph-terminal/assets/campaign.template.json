@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "campaign_id": "<stable-campaign-id>",
+  "status": "draft",
+  "account_id": "<authorized-account-id>",
+  "timezone": null,
+  "interval_minutes": null,
+  "scheduler_id": null,
+  "activation_evidence": null,
+  "posts": [
+    {
+      "post_id": "<post-id>",
+      "triggers": [
+        {
+          "phrase": "<exact-trigger-phrase>",
+          "resource_id": "<resource-id>",
+          "private_reply": {
+            "mode": "button",
+            "text": "<approved-message-text>",
+            "button_label": "<approved-button-label>",
+            "button_url": "<verified-resource-url>"
+          },
+          "public_reply": null
+        }
+      ]
+    }
+  ]
+}

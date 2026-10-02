@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "campaign_id": "<stable-campaign-id>",
+  "account_id": "<authorized-account-id>",
+  "run_id": "<unique-run-id>",
+  "lock": {
+    "directory": "<private-lock-directory>",
+    "owner": "<run-id>",
+    "acquired_at": "<timestamp>",
+    "stale_lock_resolution": "human_required"
+  },
+  "scan": {
+    "status": "not_started",
+    "next_cursor": null,
+    "backlog_interaction_ids": [],
+    "updated_at": null
+  },
+  "interactions": [
+    {
+      "source_interaction_id": "<stable-comment-or-event-id>",
+      "matched_trigger_ids": [],
+      "resolution": "pending",
+      "actions": {
+        "public_reply": {
+          "status": "pending",
+          "intent_id": null,
+          "intent_recorded_at": null,
+          "api_accepted_at": null,
+          "confirmed_at": null
+        },
+        "private_reply": {
+          "status": "pending",
+          "intent_id": null,
+          "intent_recorded_at": null,
+          "api_accepted_at": null,
+          "confirmed_at": null
+        }
+      }
+    }
+  ]
+}
