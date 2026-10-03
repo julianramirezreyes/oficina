@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "account_id": "29055718337365262",
+  "canonical_state_path": "/home/julian/proyectos/oficina/atencion-y-ventas/gestor-instagram/.local/instagram-agent/accounts/29055718337365262/state.json",
+  "interactions": [
+    {
+      "post_id": "18153702412521016",
+      "source_interaction_id": "17963568555203191",
+      "resolution": "controlled_test",
+      "source_evidence": {
+        "url": "https://www.instagram.com/p/Dd7Tbu9NRM6/c/17963568555203191/",
+        "author": "julian.ramirez.24",
+        "text": "Prueba",
+        "browser_thread": "Full permalink opened; no replies or collapsed reply controls on this source",
+        "observed_at": "2026-10-02T19:31:41.851494+00:00"
+      },
+      "actions": {
+        "public_reply": {
+          "status": "confirmed",
+          "action_identity": {
+            "account_id": "29055718337365262",
+            "source_interaction_id": "17963568555203191",
+            "action_kind": "public_reply"
+          },
+          "response_version_id": "public-api-test-v1",
+          "message": "¡Prueba recibida! Esta respuesta se envió mediante la API.",
+          "attempts": [
+            {
+              "attempt_id": "public-test-17963568555203191-1",
+              "transport": "api",
+              "status": "confirmed",
+              "intent_evidence_id": "user-authorized-personal-test",
+              "platform_result_id": "18128636071812190",
+              "result_evidence_id": "https://www.instagram.com/p/Dd7Tbu9NRM6/c/17963568555203191/r/18128636071812190/",
+              "observed_at": "2026-10-02T19:32:37.165160+00:00",
+              "http_status": 200,
+              "verification": "Reloaded source permalink and expanded sole reply in integrated browser; author modoverbo and exact sent text verified"
+            }
+          ]
+        },
+        "private_reply": {
+          "status": "blocked",
+          "attempts": [
+            {
+              "attempt_id": "private-button-test-17963568555203191-1",
+              "transport": "api",
+              "status": "blocked",
+              "observed_at": "2026-10-02T19:40:59.158097+00:00",
+              "intent_evidence_id": "user-request-fix-missing-dm-personal-test",
+              "preflight": "Fresh personal Prueba comment; full DM thread reviewed, no private response to this comment; both API identities agree.",
+              "http_status": 400,
+              "curl_exit": 0,
+              "api_result": {
+                "error": {
+                  "message": "No se puede encontrar al usuario solicitado.",
+                  "type": "IGApiException",
+                  "code": 100,
+                  "error_subcode": 2534014,
+                  "fbtrace_id": "A35kYhCLpse3mzYfzbQhwZk"
+                }
+              },
+              "verification": "Reloaded full julian.ramirez.24 DM thread after rejection; no new private message or button. Existing last outgoing is 15h old.",
+              "result_evidence_id": "https://www.instagram.com/direct/t/118376016221270/"
+            }
+          ],
+          "prior_reason": "Outside current public-only test; button E2E pending",
+          "action_identity": {
+            "account_id": "29055718337365262",
+            "source_interaction_id": "17963568555203191",
+            "action_kind": "private_reply"
+          },
+          "response_version_id": "private-button-personal-test-v1",
+          "payload": {
+            "recipient": {
+              "comment_id": "17963568555203191"
+            },
+            "message": {
+              "attachment": {
+                "type": "template",
+                "payload": {
+                  "template_type": "button",
+                  "text": "¡Hola! Gracias por comentar. Aquí tienes los recursos gratuitos para practicar tu forma de hablar. Toca el botón para abrirlos 👇",
+                  "buttons": [
+                    {
+                      "type": "web_url",
+                      "url": "https://modoverborecursos.vercel.app/",
+                      "title": "Ver recursos gratis"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "reason": "HTTP400 IGApiException100/subcode2534014: requested user cannot be found; root cause not established. No retry or plain-link fallback."
+        }
+      }
+    },
+    {
+      "source_interaction_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDc1NzIwNjk5MDk5OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYwODQ5MjgzOTEyOTMwOTozMzAzNzU2OTIyNjI1MTk1OTI2MjY1NTM5OTA2MzQ1MzY5NgZDZD",
+      "resolution": "controlled_inbound_dm_test",
+      "source_evidence": {
+        "author": "julian.ramirez.24",
+        "text": "PRUEBA",
+        "created_time": "2026-10-02T19:43:36+0000",
+        "api_participant_id": "1631305012339760",
+        "full_api_thread_read": true,
+        "latest_message_incoming": true,
+        "observed_at": "2026-10-02T20:45:12.490502+00:00"
+      },
+      "actions": {
+        "dm_reply": {
+          "status": "blocked",
+          "response_version_id": "facebook-page-button-test-v1",
+          "payload": {
+            "recipient": {
+              "id": "1631305012339760"
+            },
+            "message": {
+              "attachment": {
+                "type": "template",
+                "payload": {
+                  "template_type": "button",
+                  "text": "¡Hola! Gracias por escribir. Aquí tienes los recursos gratuitos para practicar tu forma de hablar. Toca el botón para abrirlos 👇",
+                  "buttons": [
+                    {
+                      "type": "web_url",
+                      "url": "https://modoverborecursos.vercel.app/",
+                      "title": "Ver recursos gratis"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "attempts": [
+            {
+              "attempt_id": "fb-page-dm-button-test-1",
+              "status": "blocked",
+              "transport": "official_graph_api_explorer",
+              "endpoint": "POST graph.facebook.com/v26.0/1412548348600460/messages",
+              "intent_evidence_id": "user-authorized-personal-button-test",
+              "observed_at": "2026-10-02T20:46:31.583953+00:00",
+              "api_result": {
+                "error": {
+                  "message": "(#10) Este mensaje se envió fuera del período permitido.",
+                  "type": "OAuthException",
+                  "code": 10,
+                  "error_subcode": 2534022,
+                  "fbtrace_id": "Ak-QLeaCmF3TnQw8ctLw3Tt"
+                }
+              },
+              "verification": "Reloaded Instagram personal DM thread; last visible message remains inbound PRUEBA; no new message visible. No message_id returned."
+            }
+          ],
+          "reason": "Graph API rejected send as outside allowed messaging window (code10/subcode2534022); no blind retry or fallback."
+        }
+      }
+    },
+    {
+      "source_interaction_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDc1NzIwNjk5MDk5OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYwODQ5MjgzOTEyOTMwOTozMzAzNzY0MjI1NDE2ODk5MjkzNjE3MDc0MjEyNTQyODczNgZDZD",
+      "resolution": "controlled_inbound_dm_test",
+      "source_evidence": {
+        "author": "julian.ramirez.24",
+        "text": "PRUEBA BOTON",
+        "created_time": "2026-10-02T20:49:35+0000",
+        "api_participant_id": "1631305012339760",
+        "full_api_thread_read": true,
+        "latest_message_incoming": true,
+        "observed_at": "2026-10-02T20:52:00.560681+00:00"
+      },
+      "actions": {
+        "dm_reply": {
+          "status": "blocked",
+          "response_version_id": "facebook-page-button-test-v1",
+          "payload": {
+            "recipient": {
+              "id": "1631305012339760"
+            },
+            "message": {
+              "attachment": {
+                "type": "template",
+                "payload": {
+                  "template_type": "button",
+                  "text": "¡Hola! Gracias por escribir. Aquí tienes los recursos gratuitos para practicar tu forma de hablar. Toca el botón para abrirlos 👇",
+                  "buttons": [
+                    {
+                      "type": "web_url",
+                      "url": "https://modoverborecursos.vercel.app/",
+                      "title": "Ver recursos gratis"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "attempts": [
+            {
+              "attempt_id": "fb-page-fresh-inbound-button-test-1",
+              "status": "blocked",
+              "transport": "official_graph_api_explorer",
+              "endpoint": "POST graph.facebook.com/v26.0/1412548348600460/messages",
+              "intent_evidence_id": "user-confirmed-fresh-PRUEBA-BOTON-dm",
+              "observed_at": "2026-10-02T20:53:41.347229+00:00",
+              "api_result": {
+                "error": {
+                  "message": "(#10) Este mensaje se envió fuera del período permitido.",
+                  "type": "OAuthException",
+                  "code": 10,
+                  "error_subcode": 2534022,
+                  "fbtrace_id": "AImWuzLvvYajhs06-x8oEqr"
+                }
+              },
+              "verification": "Fresh API inbound PRUEBA BOTON20:49:35Z; single send rejected; refreshed browser latest message remains inbound PRUEBA BOTON15:49 Bogota, no new outgoing visible. No message_id."
+            },
+            {
+              "attempt_id": "fb-page-expanded-grants-button-test-1",
+              "status": "blocked",
+              "transport": "official_graph_api_explorer",
+              "endpoint": "POST graph.facebook.com/v26.0/1412548348600460/messages",
+              "intent_evidence_id": "user-authorized-personal-button-test-after-verified-expanded-grants",
+              "observed_at": "2026-10-02T21:34:00.943004+00:00",
+              "preflight": "New user token has7 organic scopes granted; Page token /me1412548348600460 Modo Verbo and linkedIG17841475720699099 modoverbo verified. Full17-message API thread no paging and fresh browser thread last incomingPRUEBA BOTON20:49:35Z; no later outgoing. Reusing exact documented button payload, no fallback.",
+              "api_result": {
+                "error": {
+                  "message": "(#10) Este mensaje se envió fuera del período permitido.",
+                  "type": "OAuthException",
+                  "code": 10,
+                  "error_subcode": 2534022,
+                  "fbtrace_id": "AUoqZ0PFm3enx2NlivVRosI"
+                }
+              },
+              "verification": "Response667ms, no message_id; refreshed browser last message remains inbound PRUEBA BOTON15:49 Bogota, no new outgoing."
+            }
+          ],
+          "reason": "New Page token after verified7 organic user grants still rejected code10/sub2534022. Missing business_management/pages_manage_metadata alone do not explain rejection. No further send until causal diagnosis."
+        }
+      }
+    }
+  ],
+  "post_scans": [
+    {
+      "post_id": "18153702412521016",
+      "status": "incomplete",
+      "scope": "One verified personal test comment only; no full audience scan claimed",
+      "metadata_item_count": 334
+    }
+  ],
+  "run_id": "fb-page-expanded-grants-button-test-1",
+  "mode": "one_off",
+  "status": "expanded_grants_window_rejected",
+  "lock": {
+    "directory": "/home/julian/proyectos/oficina/atencion-y-ventas/gestor-instagram/.local/instagram-agent/accounts/29055718337365262/run.lock",
+    "owner": "fb-page-expanded-grants-button-test-1",
+    "acquired_at": "2026-10-02T21:32:01.550354+00:00",
+    "stale_lock_resolution": "human_required",
+    "released_at": "2026-10-02T21:34:00.943004+00:00"
+  },
+  "diagnostics": [
+    {
+      "kind": "inbound_dm_readiness",
+      "observed_at": "2026-10-02T19:46:09.701009+00:00",
+      "browser_thread": "https://www.instagram.com/direct/t/118376016221270/",
+      "author": "julian.ramirez.24",
+      "incoming_text": "PRUEBA",
+      "incoming_display_time": "14:43 America/Bogota",
+      "browser_verified": true,
+      "api_conversations_pages_checked": 11,
+      "api_visible_items": 0,
+      "api_pagination_exhausted": false,
+      "recipient_igsid": null,
+      "outbound_attempts": 0,
+      "status": "blocked_recipient_unresolved",
+      "note": "API returned empty data with cursors on all11 pages; browser confirms inbound. No claim of no messages. No guessed recipient, no resend of private comment reply."
+    },
+    {
+      "kind": "api_visibility_of_test_user_content",
+      "observed_at": "2026-10-02T20:01:29.432015+00:00",
+      "reads": "GET-only, no sends",
+      "findings": [
+        "GET /me/conversations (with/without platform, fields=participants): HTTP200 data=[] despite browser-verified inbound DM",
+        "GET /{test_comment_id} (fields id,text,username,from,timestamp and /replies): HTTP400 code100 subcode33 'does not exist or missing permissions' although the comment exists and the public reply to it succeeded",
+        "GET /{media_id}/comments limit3: HTTP200 data=[]"
+      ],
+      "hypothesis_unproven": "Content authored by julian.ramirez.24 is not exposed to the app in Development mode (author lacks an app role). Consistent with 2534014 but not established by primary docs.",
+      "docs_checked": "Private Replies (Instagram Login): text-only message in docs, one per commenter, 7 days, needs instagram_business_basic + instagram_business_manage_comments; button template not documented for first private reply.",
+      "status": "blocked_pending_user_decision"
+    },
+    {
+      "kind": "app_grant_and_unexplained_outbound",
+      "observed_at": "2026-10-02T20:09:21.634890+00:00",
+      "source": "parent integrated-browser observation, relayed by user",
+      "findings": [
+        "Instagram manage_access: app 'Oficina de Agentes-IG' Active (added 2026-10-01); message-info access switch ON; comments, publishing, insights ON; basic mandatory. No changes saved.",
+        "Global 'connected tools' toggle not located on web (mine and parent's reads); not equivalent to the app grant.",
+        "Personal thread now shows an outbound message with 2 bare URLs between the 2 PRUEBA messages; author unidentified (not sent by parent or this agent)."
+      ],
+      "note": "App grant is active, so a missing grant no longer explains 2534014. Unidentified outbound message needs source reconciliation (native automation / other manager) before any further send.",
+      "status": "blocked_pending_source_reconciliation"
+    },
+    {
+      "kind": "facebook_login_page_token_readiness",
+      "observed_at": "2026-10-02T20:46:31.583953+00:00",
+      "page_id": "1412548348600460",
+      "linked_ig_id": "17841475720699099",
+      "identity_verified": "Modo Verbo / modoverbo",
+      "recipient_igsid": "1631305012339760",
+      "full_personal_thread_read": true,
+      "latest_inbound_time": "2026-10-02T19:43:36+0000",
+      "native_outbound_reconciliation": "Earlier two-link outbound matches native instant_reply1436110662910895; not a custom API success.",
+      "note": "Page token direct retrieval and conversations limit1 succeeded; expanded list returned code1 reduce data. Token remains only Meta Explorer; env unchanged. Button ordinary-DM payload verified official Meta button-template docs; first private comment reply not proven."
+    }
+  ]
+}
